@@ -1,2 +1,3 @@
-# Nextjs-News-App
-A news web app built using Next.js
+# News-App
+
+A news web app built using Next.js and https://newsapi.org/
