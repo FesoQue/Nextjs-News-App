@@ -19,3 +19,18 @@
   text-align: center;
   cursor: pointer;
 }
+.paginator {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.paginator div {
+  margin: 25px;
+}
+.paginator .active {
+  cursor: pointer;
+}
+.paginator .disabled {
+  cursor: not-allowed;
+  color: rgb(179, 179, 179);
+}

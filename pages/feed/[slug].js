@@ -1,12 +1,13 @@
 import classes from '../../styles/Feed.module.css';
 import { useRouter } from 'next/router';
-
+import { Toolbar } from '../../components/Toolbar';
 const Feed = (props) => {
   const router = useRouter();
 
   const { newsPost, pageNumber } = props;
   return (
     <div className='container'>
+      <Toolbar />
       <div className={classes.main}>
         {newsPost.map((article, index) => {
           return (
@@ -26,6 +27,7 @@ const Feed = (props) => {
       </div>
 
       <div className={classes.paginator}>
+        {/* prev page btn */}
         <div
           onClick={() => {
             if (pageNumber > 1) {
@@ -35,6 +37,18 @@ const Feed = (props) => {
           className={pageNumber === 1 ? classes.disabled : classes.active}
         >
           Previous Page
+        </div>
+        <div>#{pageNumber}</div>
+        {/* next page btn */}
+        <div
+          onClick={() => {
+            if (pageNumber < 5) {
+              router.push(`/feed/${pageNumber + 1}`);
+            }
+          }}
+          className={pageNumber === 5 ? classes.disabled : classes.active}
+        >
+          Next Page
         </div>
       </div>
     </div>
