@@ -20,9 +20,13 @@ const EOM = ({ employee }) => {
 };
 
 export const getServerSideProps = async (context) => {
+  // const apiResponse = await fetch(
+  //   'https://my-json-server.typicode.com/portexe/next-news/employeeOfTheMonth'
+  // );
   const apiResponse = await fetch(
-    'https://my-json-server.typicode.com/portexe/next-news/employeeOfTheMonth'
+    'https://my-json-server.typicode.com/FesoQue/Nextjs-News-App/employeeOfTheMonth'
   );
+
   const employee = await apiResponse.json();
 
   return {
